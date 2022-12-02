@@ -29,14 +29,15 @@ From the root of the directory you created with the `students.txt` file at the r
 
 ```
 for i in `cat students.txt`; do
-  git clone git@github.com:$i/<repository_name> $i
-  cd $i
-  git pull origin spec # this will cause a merge commit message
-  rspec
+  git clone git@github.com:$i/shopping_cart_2211 $i
+  pushd $i
+  git remote add turing git@github.com:turingschool-examples/shopping_cart_2211
+  git pull --rebase turing harness
+  rspec harness
   echo
   echo
   read -p 'Press Enter to continue'
-  cd ..
+  popd
 done
 ```
 
