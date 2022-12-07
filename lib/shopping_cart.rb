@@ -44,7 +44,7 @@ class ShoppingCart
     end
   end
 
-
-
+  # def products_by_category
+  # end
 
 end
