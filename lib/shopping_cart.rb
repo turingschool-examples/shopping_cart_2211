@@ -27,7 +27,7 @@ class ShoppingCart
     end
 
     def is_full?
-        if @products.count < 4
+        if total_number_of_products < 30
             false
         else
             true
