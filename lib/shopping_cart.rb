@@ -18,9 +18,18 @@ class ShoppingCart
     details_hash
   end
 
+  def total_number_of_products
+    products.sum do |product|
+      product.quantity
+    end
+  end
+
+
+
   def is_full?
     @products.length >= @capacity ? true : false
   end
+
 
 
 
