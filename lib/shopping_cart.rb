@@ -25,7 +25,7 @@ class ShoppingCart
   end
 
   def is_full?
-   total_number_of_products >= @capacity ? true : false
+    total_number_of_products >= @capacity ? true : false
   end
 
   def products_by_category(category)
@@ -33,5 +33,4 @@ class ShoppingCart
       product.category == category
     end
   end
-
 end
