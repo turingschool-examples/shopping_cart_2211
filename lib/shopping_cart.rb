@@ -17,4 +17,11 @@ class ShoppingCart
     details_hash[:capacity] = @capacity
     details_hash
   end
+
+  def is_full?
+    @products.length >= @capacity ? true : false
+  end
+
+
+
 end
