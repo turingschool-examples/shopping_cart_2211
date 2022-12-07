@@ -45,7 +45,7 @@ RSpec.describe ShoppingCart do
     let(:product1) {Product.new(:paper, 'toilet paper', 3.70, '10')}
     let(:product2) {Product.new(:meat, 'chicken', 4.50, '2')}
     let(:product3) {Product.new(:paper, 'tissue paper', 1.25, '1')}
-    
+
     before do
       cart.add_product(product1)
       cart.add_product(product2)
@@ -55,5 +55,11 @@ RSpec.describe ShoppingCart do
     it 'can tell us #total_number_of_products' do
       expect(cart.total_number_of_products).to eq(13)
     end
+
+    it '#is_full?' do
+      expect(cart.is_full?).to be(false)
+    end
+
+    
   end
 end
