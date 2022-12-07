@@ -39,4 +39,15 @@ RSpec.describe ShoppingCart do
       expect(cart.details).to eq({name: 'King Soopers', capacity: 30})
     end
   end
+
+  describe 'Iteration 3' do
+    it "is not full by default" do
+    cart = ShoppingCart.new("King Soopers", "30items")
+    expect(cart.is_full?).to eq(false)
+  end
+
+  
+
+  end
+
 end
