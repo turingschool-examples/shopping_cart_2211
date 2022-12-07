@@ -5,7 +5,6 @@ class ShoppingCart
         @name = name
         @capacity = capacity.to_i
         @products = []
-        @full = false
     end
 
     def add_product(product)
@@ -28,6 +27,10 @@ class ShoppingCart
     end
 
     def is_full?
-        @full
+        if @products.count < 4
+            false
+        else
+            true
+        end
     end
 end

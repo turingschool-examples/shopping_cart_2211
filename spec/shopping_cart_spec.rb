@@ -58,8 +58,12 @@ RSpec.describe ShoppingCart do
 
     it '#is_full?' do
       expect(cart.is_full?).to be(false)
+
+      product4 = Product.new(:produce, 'apples', 0.99, '20')
+      cart.add_product(product4)
+
+      expect(cart.is_full?).to be(true)
     end
 
-    
   end
 end
