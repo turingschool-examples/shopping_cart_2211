@@ -81,7 +81,7 @@ RSpec.describe ShoppingCart do
         cart.add_product(product2)
         cart.add_product(product3)
         cart.add_product(product4)
-        expect(cart.products_by_category).to eq([product1, product3])
+        expect(cart.products_by_category(:paper)).to eq([product1, product3])
       end
 
     end
