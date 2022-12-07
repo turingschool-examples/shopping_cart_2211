@@ -90,5 +90,16 @@ RSpec.describe ShoppingCart do
       expect(cart.sorted_products_by_quantity).to eq([product3, product2, product1, product4])
     end
     
+    it 'can give us a #product_breakdown' do
+      product4 = Product.new(:produce, 'apples', 0.99, '20')
+      cart.add_product(product4)
+
+      results = {
+        :meat => [product2], 
+        :paper => [product1, product3], 
+        :produce => [product4]
+      }
+      expect(cart.product_breakdown).to eq (results)
+    end
   end
 end

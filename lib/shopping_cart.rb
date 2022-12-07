@@ -41,4 +41,12 @@ class ShoppingCart
     def sorted_products_by_quantity
         @products.sort_by(&:quantity)
     end
+
+    def product_breakdown
+        breakdown = {
+            meat: @products.select {|product| product.category == :meat},
+            paper: @products.select {|product| product.category == :paper},
+            produce: @products.select {|product| product.category == :produce}
+        }
+    end
 end
