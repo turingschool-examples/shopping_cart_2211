@@ -33,4 +33,8 @@ class ShoppingCart
             true
         end
     end
+
+    def percentage_occupied
+        ((total_number_of_products.to_f / 30) * 100).round(2)
+    end
 end

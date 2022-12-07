@@ -66,4 +66,24 @@ RSpec.describe ShoppingCart do
     end
 
   end
+
+  describe 'Iteration 4' do
+    let(:cart) {ShoppingCart.new("King Soopers", "30items")}
+    let(:product1) {Product.new(:paper, 'toilet paper', 3.70, '10')}
+    let(:product2) {Product.new(:meat, 'chicken', 4.50, '2')}
+    let(:product3) {Product.new(:paper, 'tissue paper', 1.25, '1')}
+
+    before do
+      cart.add_product(product1)
+      cart.add_product(product2)
+      cart.add_product(product3)
+    end
+
+    it '#percentage_occupied' do
+      expect(cart.percentage_occupied).to eq(43.33)
+    end
+
+
+    
+  end
 end
