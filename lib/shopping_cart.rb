@@ -7,6 +7,7 @@ class ShoppingCart
     @name = name
     @capacity = capacity
     @products = []
+    @is_full = false
   end
 
   #method to convert capacity to number
@@ -25,4 +26,11 @@ class ShoppingCart
     }
   end
 
+  def is_full?
+    if @products.size >= 3
+      @is_full
+    elsif @products.size >= 4
+      @is_full = true
+    end
+  end
 end
