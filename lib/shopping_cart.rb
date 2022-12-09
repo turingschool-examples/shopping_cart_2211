@@ -46,5 +46,7 @@ class ShoppingCart
     decimal * 100
   end
 
-  
+  def sorted_products_by_quantity
+    sorted_products = @products.sort {|a, b| b.quantity <=> a.quantity}
+  end
 end

@@ -105,7 +105,7 @@ RSpec.describe ShoppingCart do
       cart.add_product(product3)
       cart.add_product(product4)
 
-      expect(cart.sorted_products_by_quantity).to eq([product4, product1, product3, product3])
+      expect(cart.sorted_products_by_quantity).to eq([product4, product1, product2, product3])
     end
   end
 end
