@@ -40,4 +40,9 @@ class ShoppingCart
   def products_by_category(category)
     @products.find_all { |product| product.category == category }
   end
+
+  def percentage_occupied
+    decimal = (total_number_of_products.to_f / capacity.to_f).round(4)
+    decimal * 100
+  end
 end
