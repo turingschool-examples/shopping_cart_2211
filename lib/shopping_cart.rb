@@ -28,4 +28,12 @@ class ShoppingCart
     @products.each {|product| product_quantities << product.quantity}
     product_quantities.sum
   end
+
+  def is_full?
+    if @products.count >= 4 
+      true
+    else 
+      false 
+    end
+  end
 end
