@@ -107,5 +107,19 @@ RSpec.describe ShoppingCart do
 
       expect(cart.sorted_products_by_quantity).to eq([product4, product1, product2, product3])
     end
+
+    it 'will breakdown the products by category' do 
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product2 = Product.new(:meat, 'chicken', 4.50, '2') 
+      product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+      product4 = Product.new(:produce, 'apples', 0.99, '20')
+      cart.add_product(product1)
+      cart.add_product(product2)
+      cart.add_product(product3)
+      cart.add_product(product4)
+
+      expec(cart.product_breakdown).to eq({:meat => [product2], :paper => [product1, product3], :produce => [product4]})
+    end
   end
 end
