@@ -35,8 +35,44 @@ RSpec.describe ShoppingCart do
 
     it 'creates a hash of cart details' do
       cart = ShoppingCart.new("King Soopers", "30items")
-      
+
       expect(cart.details).to eq({name: 'King Soopers', capacity: 30})
+    end 
+
+      it 'adds three products to the cart' do
+        cart = ShoppingCart.new("King Soopers", "30items")
+        product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+        product2 = Product.new(:meat, 'chicken', 4.50, '2') 
+        product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+        
+        expect(product1 = Product.new(:paper, 'toilet paper', 3.70, '10')).to be_an_instance_of(Product)
+        expect(product2 = Product.new(:meat, 'chicken', 4.50, '2')).to be_an_instance_of(Product)
+        expect(product3 = Product.new(:paper, 'tissue paper', 1.25, '1')).to be_an_instance_of(Product)
     end
+
+    it 'adds three products to the cart' do
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product2 = Product.new(:meat, 'chicken', 4.50, '2') 
+      product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+      cart.add_product(product1)
+      cart.add_product(product2)
+      cart.add_product(product3)
+      expect(cart.total_number_of_products).to eq(13)
+
+  end
+  it 'however the cart still is not full' do
+    cart = ShoppingCart.new("King Soopers", "30items")
+    product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+    product2 = Product.new(:meat, 'chicken', 4.50, '2') 
+    product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+    cart.add_product(product1)
+    cart.add_product(product2)
+    cart.add_product(product3)
+    cart.is_full?
+
+    expect(cart.is_full?).to eq(false)
+
+end
   end
 end
