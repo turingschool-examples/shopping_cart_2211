@@ -45,4 +45,6 @@ class ShoppingCart
     decimal = (total_number_of_products.to_f / capacity.to_f).round(4)
     decimal * 100
   end
+
+  
 end
