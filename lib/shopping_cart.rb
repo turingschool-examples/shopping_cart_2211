@@ -26,13 +26,22 @@ class ShoppingCart
          @total += product.quantity
         end
         return @total
+
     end 
 
     def is_full?
-       if @total > 20
+       if @total > 30
          @is_full = true 
        end 
         return @is_full
+    end
+
+    def products_by_category(category)
+        paper_products = []
+        @products.select do |product|
+        paper_products << product if product.category == :paper
+        end
+        return paper_products
     end
     
 end
