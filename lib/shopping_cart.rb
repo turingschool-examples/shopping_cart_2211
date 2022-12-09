@@ -49,4 +49,11 @@ class ShoppingCart
   def sorted_products_by_quantity
     sorted_products = @products.sort {|a, b| b.quantity <=> a.quantity}
   end
+
+  def product_breakdown
+    breakdown = {}
+    categories = @products.map {|product| product.category}
+    categories.each {|category| breakdown[category] = products_by_category(category)}
+    breakdown
+  end
 end

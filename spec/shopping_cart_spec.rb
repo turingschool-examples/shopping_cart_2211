@@ -119,7 +119,7 @@ RSpec.describe ShoppingCart do
       cart.add_product(product3)
       cart.add_product(product4)
 
-      expec(cart.product_breakdown).to eq({:meat => [product2], :paper => [product1, product3], :produce => [product4]})
+      expect(cart.product_breakdown).to eq({:meat => [product2], :paper => [product1, product3], :produce => [product4]})
     end
   end
 end
