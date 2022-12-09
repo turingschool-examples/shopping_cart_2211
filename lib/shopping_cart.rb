@@ -27,6 +27,5 @@ class ShoppingCart
     product_quantities = []
     @products.each {|product| product_quantities << product.quantity}
     product_quantities.sum
-
   end
 end
