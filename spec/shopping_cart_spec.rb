@@ -136,7 +136,7 @@ RSpec.describe ShoppingCart do
     #  I'm not sure why Ruby created product4 as a new object ID. I think it's because I played aorund and deleted/ edited stuff from previous tests. But everything is on point other than the object ID changed. Would love to understand why but moving on for time reasons
           
       end
-
+# This is where I timed out. I was researching how to iterate only over the first item of an array, or something along those lines- I need to convert the symbol to a string and then sort, and then follow the same path I did for the above method. 
       it 'the products are broken down' do
         cart = ShoppingCart.new("King Soopers", "30items")
         product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
@@ -151,6 +151,6 @@ RSpec.describe ShoppingCart do
         expect(cart.product_breakdown).to eq({:meat=>[product2], :paper=>[product1, product3], :produce=>[product4]})
 
       end 
-    
+    # Update: I was uber curious so I had to finish it. You can see my previous commits- the one at around 20 minutes ago was the accurte time. I had to finish this one for my own sanity. 
   end
 end

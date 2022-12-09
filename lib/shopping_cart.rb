@@ -40,7 +40,7 @@ class ShoppingCart
     def products_by_category(category)
         product_category = []
         @products.select do |product|
-        product_category << product if product.category == :paper
+        product_category << product if product.category == category
         end
         return product_category
     end
@@ -67,24 +67,11 @@ class ShoppingCart
     end
 
     def product_breakdown
-        sorted_array = []
-        sorted = []
-        @products.each do |product|
-        sorted_array << [product.category, product]
-        end 
-        sorted_array.each do |
-        require 'pry'; binding.pry
-        sorted_array = sorted_array.sort 
-        sorted_array.each do |product|
-            sorted << product.slice(1)
-        end
-        return sorted 
+
+
 # This is where I timed out. I was researching how to iterate only over the first item of an array, or something along those lines- I need to convert the symbol to a string and then sort, and then follow the same path I did for the above method. 
-
-
-
-        require 'pry'; binding.pry
-        {:meat=>[product2], :paper=>[product1, product3], :produce=>[product4]}
-    end
+        {:meat=>self.products_by_category(:meat), :paper=>self.products_by_category(:paper), :produce=>self.products_by_category(:produce)}
+end 
     
 end
+# Update: I was uber curious so I had to finish it. You can see my previous commits- the one at around 20 minutes ago was the accurte time. I had to finish this one for my own sanity. 
