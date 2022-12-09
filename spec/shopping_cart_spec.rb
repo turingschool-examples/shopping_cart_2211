@@ -67,5 +67,19 @@ RSpec.describe ShoppingCart do
 
       expect(cart.is_full?).to eq(true)  
     end
+
+    it 'will list the prooducts by category' do 
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product2 = Product.new(:meat, 'chicken', 4.50, '2') 
+      product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+      product4 = Product.new(:produce, 'apples', 0.99, '20')
+      cart.add_product(product1)
+      cart.add_product(product2)
+      cart.add_product(product3)
+      cart.add_product(product4)
+
+      expect(cart.products_by_category(:paper)).to eq([product1, product3])
+    end
   end
 end
