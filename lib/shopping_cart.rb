@@ -22,4 +22,11 @@ class ShoppingCart
     details[:capacity] = capacity
     details
   end
+
+  def total_number_of_products
+    product_quantities = []
+    @products.each {|product| product_quantities << product.quantity}
+    product_quantities.sum
+
+  end
 end
