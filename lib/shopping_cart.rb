@@ -30,7 +30,7 @@ class ShoppingCart
   end
 
   def is_full?
-    if @products.count >= 4 
+    if total_number_of_products >= capacity
       true
     else 
       false 
