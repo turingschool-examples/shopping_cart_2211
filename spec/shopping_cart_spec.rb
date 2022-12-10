@@ -110,5 +110,22 @@ RSpec.describe ShoppingCart do
 
       expect(@cart.sorted_products_by_quantity).to eq([@product4, @product1, @product2, @product3])
     end
+
+    it 'can get product breakdown' do
+      expect(@cart.product_breakdown).to eq({})
+
+      @cart.add_product(@product1)
+      @cart.add_product(@product2)
+      @cart.add_product(@product3)
+      @cart.add_product(@product4)
+
+      breakdown = {
+        meat: [@product2],
+        paper: [@product1, @product3],
+        produce: [@product4]
+      }
+
+      expect(@cart.product_breakdown).to eq(breakdown)
+    end
   end
 end
