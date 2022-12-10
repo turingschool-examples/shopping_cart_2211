@@ -47,4 +47,18 @@ class ShoppingCart
     end.reverse
   end
 
+  def product_breakdown 
+    product_breakdown_hash = {}
+    
+    @products.map do |product| 
+      product_breakdown_hash[product.category] = []
+    end
+
+    product_breakdown_hash.map do |category, product|
+       product_breakdown_hash[category] << products_by_category(category)
+       product_breakdown_hash[category] = product.flatten
+    end
+
+    product_breakdown_hash
+  end
 end
