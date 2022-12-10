@@ -41,4 +41,10 @@ class ShoppingCart
     ((total_number_of_products / @capacity.to_f) * 100).round(2)
   end
 
+  def sorted_products_by_quantity 
+    @products.sort_by do |product|
+      product.quantity
+    end.reverse
+  end
+
 end
