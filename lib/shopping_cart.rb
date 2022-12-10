@@ -25,4 +25,9 @@ class ShoppingCart
     end
   end
 
+  def is_full? 
+    return true if total_number_of_products > @capacity
+    false
+  end
+
 end
