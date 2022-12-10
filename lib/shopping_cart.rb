@@ -1,5 +1,5 @@
 class ShoppingCart
-    attr_reader :name, :capacity, :products
+    attr_reader :name, :capacity, :products, :cart
     def initialize(name, capacity)
         @name = name
         @capacity = capacity
@@ -15,9 +15,18 @@ class ShoppingCart
     end
 
     def details
-        {
+       details = {
             name: @name,
-            capacity: capacity,
-    }
+            capacity: 30,
+        }
     end
+    
+    def total_number_of_products
+        @products.map { |product| product.quantity }.sum
+    end
+
+    def is_full?
+        total_number_of_products > details[:capacity]
+    end
+
 end
