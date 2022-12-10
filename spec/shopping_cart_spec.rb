@@ -70,5 +70,14 @@ RSpec.describe ShoppingCart do
       @cart.add_product(@product4)
       expect(@cart.is_full?).to eq(true)
     end
+
+    it 'can get products by category' do
+      @cart.add_product(@product1)
+      @cart.add_product(@product2)
+      @cart.add_product(@product3)
+
+      expect(@cart.products_by_category(:paper)).to eq([@product1, @product3])
+      expect(@cart.products_by_category(:meat)).to eq([@product2])
+    end
   end
 end
