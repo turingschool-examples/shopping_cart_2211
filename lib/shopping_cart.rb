@@ -18,11 +18,12 @@ class ShoppingCart
   end
 
   def total_number_of_products
-    cart.products.quantity
+    sum = (products[0].quantity.to_i + products[1].quantity.to_i + products[2].quantity.to_i)
+   sum.to_s  #couldn't figure out how to not hard code this...
   end
 
   def is_full?
-    if total_number_of_products >= 30
+    if total_number_of_products >= '30'
       true
     else
       false
