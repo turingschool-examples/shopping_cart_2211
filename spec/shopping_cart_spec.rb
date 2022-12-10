@@ -57,7 +57,7 @@ RSpec.describe ShoppingCart do
   end
 
    describe '#is_full?' do 
-    xit 'will determine if a cart is full or not, based on its capacity' do 
+    it 'will determine if a cart is full or not, based on its capacity' do 
       cart = ShoppingCart.new("King Soopers", "30items")
 
       product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
@@ -69,6 +69,8 @@ RSpec.describe ShoppingCart do
       cart.add_product(product1)
 
       cart.total_number_of_products
+
+      expect(cart.is_full?).to eq(false)
     end
   end
 end
