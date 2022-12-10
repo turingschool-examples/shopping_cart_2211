@@ -89,5 +89,15 @@ RSpec.describe ShoppingCart do
       @product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
       @product4 = Product.new(:produce, 'apples', 0.99, '20')
     end
+
+    it 'can get percentage occupied' do
+      expect(@cart.percentage_occupied).to eq(0.0)
+
+      @cart.add_product(@product1)
+      @cart.add_product(@product2)
+      @cart.add_product(@product3)
+
+      expect(@cart.percentage_occupied).to eq(43.33)
+    end
   end
 end
