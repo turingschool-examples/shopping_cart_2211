@@ -39,4 +39,50 @@ RSpec.describe ShoppingCart do
       expect(cart.details).to eq({name: 'King Soopers', capacity: 30})
     end
   end
+  
+  describe 'Iteration 3' do
+    it 'can count products' do
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product_1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product_2 = Product.new(:meat, 'chicken', 4.50, '2')
+      product_3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+
+      cart.add_product(product_1)
+      cart.add_product(product_2)
+      cart.add_product(product_3)
+require 'pry'; binding.pry
+      expect(cart.total_number_of_products).to eq('13')
+    end
+
+    it 'can be full' do
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product_1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product_2 = Product.new(:meat, 'chicken', 4.50, '2')
+      product_3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+      product_4 = Product.new(:produce, 'apples', 0.99, '20')
+      
+      cart.add_product(product_1)
+      cart.add_product(product_2)
+      cart.add_product(product_3)
+
+      expect(cart.is_full?).to eq false
+      
+      cart.add_product(product_4)
+
+      expect(cart.is_full?).to eq true
+    end
+
+    it 'can tell products by category' do
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product_1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product_2 = Product.new(:meat, 'chicken', 4.50, '2')
+      product_3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+
+      cart.add_product(product_1)
+      cart.add_product(product_2)
+      cart.add_product(product_3)
+
+      expect(cart.products_by_category(:paper)).to eq([product_1, product_3])
+    end
+  end
 end
