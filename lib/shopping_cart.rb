@@ -43,4 +43,19 @@ class ShoppingCart
         sorted_products = @products.sort_by { |product| product.quantity }
         sorted_products.reverse
     end
+
+    def product_breakdown 
+        breakdown = {}
+
+        sorted_products = @products.sort_by { |product| product.category }
+        
+        sorted_categories = sorted_products.map { |product| product.category }
+        sorted_categories = sorted_categories.uniq
+
+        sorted_categories.each { |category| breakdown[category] = [] }
+
+        sorted_products.each { |product| breakdown[product.category] << product }
+
+        breakdown
+    end
 end
