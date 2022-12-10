@@ -41,5 +41,10 @@ class ShoppingCart
         end
     end
 
+    def percentage_occupied
+        # require 'pry'; binding.pry
+       ((total_number_of_products.to_i / 30.0) * 100).round(1)
+    end
+
 
 end

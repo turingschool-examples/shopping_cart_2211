@@ -101,7 +101,7 @@ RSpec.describe ShoppingCart do
       product2 = Product.new(:meat, 'chicken', 4.50, '2')
       product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
 
-      art.add_product(product1)
+      cart.add_product(product1)
       cart.add_product(product2)
       cart.add_product(product3)
 
