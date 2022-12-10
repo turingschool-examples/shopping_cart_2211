@@ -11,5 +11,12 @@ class ShoppingCart
     @products << product
   end
  
+  def details 
+    cart_details = {}
+
+    cart_details[:name] = @name 
+    cart_details[:capacity] = @capacity
+    cart_details
+  end
 
 end
