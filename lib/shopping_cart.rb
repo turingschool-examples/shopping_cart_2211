@@ -1,3 +1,5 @@
+require './lib/product'
+
 class ShoppingCart
     attr_reader :name,
                 :capacity,
@@ -7,5 +9,9 @@ class ShoppingCart
         @name = name
         @capacity = capacity.to_i
         @products = []
+    end
+
+    def add_product(product)
+        products << product
     end
 end
