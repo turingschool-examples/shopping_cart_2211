@@ -10,4 +10,8 @@ class Product
         @unit_price = unit_price
         @quantity = quantity.to_i
     end
+    
+    def is_hoarded?
+        false
+    end
 end
