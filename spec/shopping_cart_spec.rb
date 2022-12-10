@@ -154,7 +154,7 @@ RSpec.describe ShoppingCart do
                     paper: [product1, product3],
                     produce: [product4]
       }
-
+      #require 'pry'; binding.pry
       expect(cart.product_breakdown).to eq(expected)
     end
   end
