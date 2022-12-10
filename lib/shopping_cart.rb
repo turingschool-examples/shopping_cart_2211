@@ -30,4 +30,11 @@ class ShoppingCart
     false
   end
 
+  def products_by_category(category) 
+    @products.select do |product| 
+      next if product.category != category
+      product
+    end
+  end
+
 end
