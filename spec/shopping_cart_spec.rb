@@ -59,8 +59,16 @@ RSpec.describe ShoppingCart do
      expect(@cart.total_number_of_products).to eq(12)
     end
 
-    xit 'can check if cart is full' do
+    it 'can check if cart is full' do
+      expect(@cart.is_full?).to eq(false)
 
+      @cart.add_product(@product1)
+      @cart.add_product(@product2)
+      @cart.add_product(@product3)
+      expect(@cart.is_full?).to eq(false)
+
+      @cart.add_product(@product4)
+      expect(@cart.is_full?).to eq(true)
     end
   end
 end
