@@ -20,4 +20,8 @@ class Product
     def hoard
         @hoarded = true
     end
+
+    def total_price
+        @quantity * @unit_price
+    end
 end
