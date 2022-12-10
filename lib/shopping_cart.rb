@@ -27,5 +27,13 @@ class ShoppingCart
         total_products.reduce(0, :+)
     end
 
+    def is_full?
+        unless total_number_of_products >= 31
+            false
+        else 
+            true
+        end
+    end
+
 
 end

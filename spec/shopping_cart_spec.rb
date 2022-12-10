@@ -77,7 +77,7 @@ RSpec.describe ShoppingCart do
       cart.add_product(product3)
       cart.add_product(product4)
 
-      expect(cart.is_full?).to be(false)
+      expect(cart.is_full?).to be(true)
     end
       
 
