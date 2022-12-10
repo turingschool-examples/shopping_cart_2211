@@ -50,7 +50,7 @@ RSpec.describe ShoppingCart do
       cart.add_product(product_1)
       cart.add_product(product_2)
       cart.add_product(product_3)
-require 'pry'; binding.pry
+#require 'pry'; binding.pry
       expect(cart.total_number_of_products).to eq('13')
     end
 
