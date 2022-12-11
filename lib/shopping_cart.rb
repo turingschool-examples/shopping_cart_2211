@@ -12,4 +12,11 @@ class ShoppingCart
   def add_product(product)
     products.push(product)
   end
+
+  def details
+    {
+    name: @name,
+    capacity: @capacity
+    }
+  end
 end
