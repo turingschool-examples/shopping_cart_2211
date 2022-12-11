@@ -9,7 +9,7 @@ RSpec.describe Product do
     end
   end
 
-    xit 'has attributes' do 
+    it 'has attributes' do 
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
       expect(product.category).to eq(:paper)
