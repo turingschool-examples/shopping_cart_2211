@@ -41,7 +41,11 @@ class ShoppingCart
     end
 
     def products_by_category(product)
-        require 'pry'; binding.pry
+        
+        products.map do |product|
+            product
+        end
+        
     end
 
 end

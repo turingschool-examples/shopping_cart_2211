@@ -29,9 +29,5 @@ RSpec.describe Product do
       product.hoard
       expect(product.is_hoarded?).to eq(true)
     end
-
-    it '' do
-      
-    end
   end
 end

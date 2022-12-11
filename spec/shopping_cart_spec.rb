@@ -74,6 +74,7 @@ RSpec.describe ShoppingCart do
       cart.add_product(product3)
       product4 = Product.new(:produce, 'apples', 0.99, '20')
       cart.add_product(product4)
+      
     end
 
   end
