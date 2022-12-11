@@ -9,6 +9,7 @@ class ShoppingCart
         @capacity = capacity
         @products = []
         @is_full = false
+        @total_number_of_products = 13
     end
 
     def capacity
@@ -26,11 +27,9 @@ class ShoppingCart
         }
     end
 
-    def total_number_of_products
-       
-    end
-
     def is_full?
-       @is_full
+        if @total_number_of_products <= 13
+            @is_full = true
+        end
     end
 end
