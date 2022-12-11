@@ -64,7 +64,6 @@ RSpec.describe ShoppingCart do
 
     it 'is full' do
       product4 = Product.new(:produce, 'apples', 0.99, '20')
-
       @cart.add_product(product4)
 
       expect(@cart.is_full?).to be true
@@ -72,7 +71,6 @@ RSpec.describe ShoppingCart do
 
     it 'finds products by category' do
       product4 = Product.new(:produce, 'apples', 0.99, '20')
-
       @cart.add_product(product4)
 
       expect(@cart.products_by_category(:paper)).to eq([@product1, @product3])
@@ -94,6 +92,13 @@ RSpec.describe ShoppingCart do
     it 'determines the percentage occupied' do
       
       expect(@cart.percentage_occupied).to eq (43.33)
+    end
+
+    it 'sorts products by quantity' do
+      product4 = Product.new(:produce, 'apples', 0.99, '20')
+      @cart.add_product(product4)
+
+      expect(@cart.sorted_products_by_quantity).to eq([@product3, @product2, @product1, product4])
     end
   end
 end
