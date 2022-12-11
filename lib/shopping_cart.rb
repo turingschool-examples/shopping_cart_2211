@@ -18,8 +18,11 @@ class ShoppingCart
   end
 
   def total_number_of_products
-    sum = (products[0].quantity.to_i + products[1].quantity.to_i + products[2].quantity.to_i)
-   sum.to_s  #couldn't figure out how to not hard code this...
+    total = 0 
+    @products.each do |product|
+      total += product.quantity.to_i 
+    end
+    total.to_s
   end
 
   def is_full?
