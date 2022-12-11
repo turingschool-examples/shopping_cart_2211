@@ -20,4 +20,9 @@ class ShoppingCart
             :capacity => capacity.to_i
         }
     end
+    def total_number_of_products
+        products[0].quantity.to_i + products[1].quantity.to_i + products[2].quantity.to_i
+    end
+
+    
 end
