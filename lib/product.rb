@@ -6,7 +6,15 @@ class Product
         @name = name
         @unit_price = unit_price
         @quantity = quantity.to_i
-        
+        @stash = 0
+    end
+
+    def is_hoarded?
+        @stash >= 1
+    end
+
+    def hoard
+        @stash += 1
     end
 
 end
