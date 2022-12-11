@@ -100,5 +100,12 @@ RSpec.describe ShoppingCart do
 
       expect(@cart.sorted_products_by_quantity).to eq([@product3, @product2, @product1, product4])
     end
+
+    it 'breaks down product by category' do
+      product4 = Product.new(:produce, 'apples', 0.99, '20')
+      @cart.add_product(product4)
+
+      expect(@cart.product_breakdown).to eq({:meat=>@product2, :paper=>[@product1, @product3], :produce=>product4})
+    end
   end
 end

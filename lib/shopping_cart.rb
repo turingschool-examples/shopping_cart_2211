@@ -47,4 +47,10 @@ class ShoppingCart
       product.quantity
     end
   end 
+
+  def product_breakdown
+    products.to_h do |product|
+      [product.category, product]
+    end
+  end 
 end
