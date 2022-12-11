@@ -3,7 +3,7 @@ require './lib/shopping_cart'
 
 RSpec.describe ShoppingCart do
   describe 'Iteration 2' do
-    xit 'exists' do
+    it 'exists' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart).to be_a(ShoppingCart)
