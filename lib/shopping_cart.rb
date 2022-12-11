@@ -33,12 +33,15 @@ class ShoppingCart
     end
 
     def is_full?
-        if shopping_cart.capacity <= total_number_of_products
+        if capacity < total_number_of_products
         @is_full = true
+        else
+            false
         end
     end
 
+    def products_by_category(product)
+        require 'pry'; binding.pry
+    end
 
-
-    
 end
