@@ -17,6 +17,12 @@ RSpec.describe Product do
       expect(product.quantity).to eq(10)
     end
     
+    it 'has a total price' do
+      product = Product.new(:paper, 'toilet paper', 3.70, '10')
+      
+      expect(product.total_price).to eq (37.0)
+    end
+
     it 'starts out as not hoarded' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
