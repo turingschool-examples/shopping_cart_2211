@@ -5,13 +5,11 @@ RSpec.describe ShoppingCart do
   describe 'Iteration 2' do
     it 'exists' do
       cart = ShoppingCart.new("King Soopers", "30items")
-
       expect(cart).to be_a(ShoppingCart)
     end
 
     it 'has attributes' do
       cart = ShoppingCart.new("King Soopers", "30items")
-
       expect(cart.name).to eq("King Soopers")
       expect(cart.capacity).to eq(30)
     end
@@ -26,10 +24,8 @@ RSpec.describe ShoppingCart do
       cart = ShoppingCart.new("King Soopers", "30items")
       product_1 = Product.new(:paper, 'toilet paper', 3.70, '10')
       product_2 = Product.new(:meat, 'chicken', 4.50, '2')
-
       cart.add_product(product_1)
       cart.add_product(product_2)
-
       expect(cart.products).to eq([product_1, product_2])
     end
 
@@ -74,7 +70,6 @@ RSpec.describe ShoppingCart do
       cart.add_product(product3)
       product4 = Product.new(:produce, 'apples', 0.99, '20')
       cart.add_product(product4)
-      
     end
 
   end

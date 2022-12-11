@@ -23,13 +23,11 @@ class ShoppingCart
         }
     end
     def total_number_of_products
-        
         number = 0
         products.each do |product|
             number += product.quantity
         end
-        number
-        
+        number  
     end
 
     def is_full?
@@ -40,12 +38,10 @@ class ShoppingCart
         end
     end
 
-    def products_by_category(product)
-        
+    def products_by_category(product)  
         products.map do |product|
             product
-        end
-        
+        end  
     end
 
 end
