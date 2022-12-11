@@ -1,3 +1,5 @@
+require './lib/product'
+
 class ShoppingCart
     attr_reader :name, :capacity, :products
 
@@ -16,7 +18,17 @@ class ShoppingCart
         name: @name,
         capacity: @capacity 
         }
+    end
 
+    def total_number_of_products
+       num_arr = @products.map do |product|
+                 product.quantity
+                 end
+        num_arr.sum
+    end
+
+    def is_full?
+        total_number_of_products >= @capacity
     end
 
 end
