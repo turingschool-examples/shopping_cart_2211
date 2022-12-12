@@ -2,10 +2,10 @@ class Product
   attr_reader :category, :name, :unit_price, :quantity
   
   def initialize(category, name, unit_price, quantity)
-    @category = :paper
-    @name = 'toilet paper'
-    @unit_price = 3.70
-    @quantity = 10
+    @category = category
+    @name = name
+    @unit_price = unit_price
+    @quantity = quantity.to_i
     @hoarded = false
   end
 
@@ -16,5 +16,4 @@ class Product
   def hoard
     @hoarded = true
   end
-  require 'pry'; binding.pry
 end
