@@ -21,4 +21,8 @@ class Product
         @hoarded = true
     end
 
+    def total_price
+        @unit_price * @quantity
+    end
+
 end

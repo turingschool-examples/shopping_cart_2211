@@ -15,6 +15,7 @@ RSpec.describe Product do
       expect(product.name).to eq('toilet paper')
       expect(product.unit_price).to eq(3.70)
       expect(product.quantity).to eq(10)
+      expect(product.total_price).to eq(37.0)
     end
     
     it 'starts out as not hoarded' do
