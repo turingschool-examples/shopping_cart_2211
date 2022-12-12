@@ -17,7 +17,7 @@ RSpec.describe Product do
       expect(product.quantity).to eq(10)
     end
     
-    xit 'starts out as not hoarded' do
+    it 'starts out as not hoarded' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
       expect(product.is_hoarded?).to eq(false)
