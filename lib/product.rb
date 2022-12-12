@@ -12,11 +12,15 @@ class Product
     end
 
     def is_hoarded?
-        if quantity > 10 
+        if quantity.to_i > 10 
             true
         else
             false
         end
+    end
+
+    def hoard
+
     end
 
 end
