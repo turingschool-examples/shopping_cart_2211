@@ -10,11 +10,11 @@ RSpec.describe Product do
       expect(product).to be_a(Product)
     end
 
-    xit 'has attributes' do 
+    it 'has attributes' do 
       expect(product.category).to eq(:paper)
       expect(product.name).to eq('toilet paper')
       expect(product.unit_price).to eq(3.70)
-      expect(product.quantity).to eq(10)
+      expect(product.quantity).to eq('10')
     end
     
     xit 'starts out as not hoarded' do
