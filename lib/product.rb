@@ -25,4 +25,9 @@ class Product
         @is_hoarded = true
     end
 
+    def total_price
+        (@quantity.to_f * @unit_price).round(2)
+    end
+
+
 end
