@@ -29,7 +29,7 @@ RSpec.describe ShoppingCart do
       expect(cart.products).to eq([product_1, product_2])
     end
 
-    xit 'creates a hash of cart details' do
+    it 'creates a hash of cart details' do
       expect(cart.details).to eq({name: 'King Soopers', capacity: 30})
     end
   end

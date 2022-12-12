@@ -14,4 +14,11 @@ class ShoppingCart
         @products << product
     end
 
+    def details
+        cart = {
+            name: @name,
+            capacity: @capacity
+        }
+    end
+
 end
