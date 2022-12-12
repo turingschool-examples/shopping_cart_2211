@@ -9,7 +9,7 @@ RSpec.describe ShoppingCart do
       expect(cart).to be_a(ShoppingCart)
     end
 
-    xit 'has attributes' do
+    it 'has attributes' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart.name).to eq("King Soopers")
