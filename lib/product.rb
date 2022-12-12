@@ -3,7 +3,8 @@ class Product
                 :name, 
                 :unit_price,
                 :quantity,
-                :hoarded_products
+                :hoarded_products, 
+                :is_hoarded
 
     def initialize(category, name, price, quantity)
         @category = category
@@ -11,22 +12,19 @@ class Product
         @unit_price = price
         @quantity = quantity
         @hoarded_products = []
+        @is_hoarded = false
     end
 
-    def is_hoarded?
-        if hoarded_products.include?(product) = true
+    def is_hoarded? 
+        if is_hoarded == true
+            true
         else
             false
         end
-
-        # hoarded_products.all? do |product|
-        #     # product.include?(product) == true
-        #     product == product
-        # end
     end
 
-    def hoard(product)
-        hoarded_products << product
-    end
+    # def hoard(product)
+    #     @hoarded_products << product
+    # end
 
 end
