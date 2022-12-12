@@ -44,6 +44,20 @@ class ShoppingCart
     end
 
     def percentage_occupied
-        
+        (@product_total.fdiv(@capacity)*100).round(2)
+    end
+
+    def sorted_products_by_quantity
+        @products.sort_by{|product| product.quantity}.reverse
+    end
+
+    def product_breakdown
+        cat_array = []
+
+        @products.each do |product|
+            cat_array << product.category
+        end
+
+        return cat_array.sort_by{|cat| cat.chr.ord}.reverse
     end
 end

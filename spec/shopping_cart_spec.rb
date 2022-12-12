@@ -101,5 +101,21 @@ RSpec.describe ShoppingCart do
 
       expect(cart.percentage_occupied).to eq(43.33)
     end
+
+    it "can sort by quantity and provide a breakdown" do
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product_1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product_2 = Product.new(:meat, 'chicken', 4.50, '2')
+      product_3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+      product_4 = Product.new(:produce, 'apples', 0.99, '20')
+
+      cart.add_product(product_1)
+      cart.add_product(product_2)
+      cart.add_product(product_3)
+      cart.add_product(product_4)
+
+      expect(cart.sorted_products_by_quantity).to eq([product_4, product_1, product_2, product_3])
+      expect(cart.product_breakdown).to eq({:meat=>[product_2], :paper=>[product_1, product_3], :produce=>[product_4]})
+    end
   end
 end
