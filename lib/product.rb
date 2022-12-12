@@ -14,7 +14,7 @@ class Product
     end
 
     def is_hoarded? 
-       if is_hoarded == true
+       if @is_hoarded == true
         true
        else
         false
@@ -22,15 +22,7 @@ class Product
     end
 
     def hoard
-
-        
+        @is_hoarded = true
     end
 
 end
-
-# def sunk?
-#         if @health == 0
-#             @sunk = true
-#         end
-#         @sunk
-#     end

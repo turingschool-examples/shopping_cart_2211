@@ -22,7 +22,7 @@ RSpec.describe Product do
       expect(product.is_hoarded?).to eq(false)
     end
 
-    xit 'can be hoarded' do
+    it 'can be hoarded' do
       product.hoard
       expect(product.is_hoarded?).to eq(true)
     end
