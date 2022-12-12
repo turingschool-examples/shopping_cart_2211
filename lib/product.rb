@@ -17,4 +17,8 @@ class Product
         @hoarded
     end
 
+    def hoard
+        @hoarded = true
+    end
+
 end

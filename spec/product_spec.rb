@@ -23,7 +23,7 @@ RSpec.describe Product do
       expect(product.is_hoarded?).to eq(false)
     end
 
-    xit 'can be hoarded' do
+    it 'can be hoarded' do
       product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
       product.hoard
