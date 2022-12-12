@@ -6,11 +6,14 @@ RSpec.describe ShoppingCart do
 
   let(:product_1) {Product.new(:paper, 'toilet paper', 3.70, '10')}
   let(:product_2) {Product.new(:meat, 'chicken', 4.50, '2')}
-
+  let(:product_3) {Product.new(:paper, 'tissue paper', 1.25, '1')}
 
   describe 'Iteration 2' do
     it 'exists' do
       expect(cart).to be_a(ShoppingCart)
+      expect(product_1).to be_a(Product)
+      expect(product_2).to be_a(Product)
+      expect(product_3).to be_a(Product)
     end
 
     it 'has attributes' do
@@ -32,5 +35,16 @@ RSpec.describe ShoppingCart do
     it 'creates a hash of cart details' do
       expect(cart.details).to eq({name: 'King Soopers', capacity: 30})
     end
+  end
+
+  describe 'Iteration 3' do
+
+    it 'exists' do
+      expect(product_1).to be_a(Product)
+      expect(product_2).to be_a(Product)
+      expect(product_3).to be_a(Product)
+    end
+
+
   end
 end
