@@ -25,8 +25,8 @@ class Product
         # end
     end
 
-    # def hoard(product)
-    #     hoarded_products << product
-    # end
+    def hoard(product)
+        hoarded_products << product
+    end
 
 end

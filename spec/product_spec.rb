@@ -18,11 +18,11 @@ RSpec.describe Product do
       # maybe .quantity would work better as an integer?? 
     end
     
-    it 'starts out as not hoarded' do
+    xit 'starts out as not hoarded' do
       expect(product.is_hoarded?).to eq(false)
     end
 
-    xit 'can be hoarded' do
+    it 'can be hoarded' do
       product.hoard
       expect(product.is_hoarded?).to eq(true)
     end
