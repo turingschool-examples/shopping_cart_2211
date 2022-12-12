@@ -22,7 +22,7 @@ RSpec.describe ShoppingCart do
       expect(cart.products).to eq([])
     end
 
-    xit 'can add products to the cart' do
+    it 'can add products to the cart' do
       cart.add_product(product_1)
       cart.add_product(product_2)
 
