@@ -22,7 +22,7 @@ RSpec.describe ShoppingCart do
       expect(cart.products).to eq([])
     end
 
-    xit 'can add products to the cart' do
+    it 'can add products to the cart' do
       cart = ShoppingCart.new("King Soopers", "30items")
       product_1 = Product.new(:paper, 'toilet paper', 3.70, '10')
       product_2 = Product.new(:meat, 'chicken', 4.50, '2')

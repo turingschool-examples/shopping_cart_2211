@@ -10,4 +10,8 @@ attr_reader :name, :capacity, :products
   def capacity
     @capacity.sub('items', '').to_i
   end
+
+  def add_product(product)
+    @products << product
+  end
 end
