@@ -16,4 +16,12 @@ class ShoppingCart
             capacity: @capacity
         }
     end
+
+    def total_number_of_products
+        total_number_of_products = 0
+        @products.each do |product|
+            total_number_of_products += product.quantity
+        end
+        total_number_of_products
+    end
 end
