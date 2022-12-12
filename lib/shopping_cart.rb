@@ -47,7 +47,11 @@ class ShoppingCart
         sorted_wrong = products.sort_by do |product|
             product.quantity
         end
-
         sorted_wrong.reverse
+    end
+
+    def product_breakdown
+        # require 'pry'; binding.pry
+        @products.to_h {|product| [product.category, product]}
     end
 end
