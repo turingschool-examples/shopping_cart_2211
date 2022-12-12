@@ -45,6 +45,13 @@ RSpec.describe ShoppingCart do
       expect(product_3).to be_a(Product)
     end
 
+    it 'total_number_of_products' do
+      cart.add_product(product_1)
+      cart.add_product(product_2)
+      cart.add_product(product_3)
+
+      expect(cart.total_number_of_products).to eq(3)    
+    end
 
   end
 end

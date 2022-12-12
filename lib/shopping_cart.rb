@@ -21,4 +21,8 @@ class ShoppingCart
         }
     end
 
+    def total_number_of_products
+        @products.length
+    end
+
 end
