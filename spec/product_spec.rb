@@ -2,7 +2,7 @@ require 'rspec'
 require './lib/product'
 
 RSpec.describe Product do
-  let(:product) {Product.new(:paper, 'toilet paper', 3.70, '10')}
+  let(:product) {Product.new(:paper, 'toilet paper', 3.70, 10)}
 
   describe 'Iteration 1' do
 
@@ -14,10 +14,11 @@ RSpec.describe Product do
       expect(product.category).to eq(:paper)
       expect(product.name).to eq('toilet paper')
       expect(product.unit_price).to eq(3.70)
-      expect(product.quantity).to eq('10')
+      expect(product.quantity).to eq(10)
+      # maybe .quantity would work better as an integer?? 
     end
     
-    xit 'starts out as not hoarded' do
+    it 'starts out as not hoarded' do
       expect(product.is_hoarded?).to eq(false)
     end
 

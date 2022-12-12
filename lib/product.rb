@@ -10,4 +10,13 @@ class Product
         @unit_price = price
         @quantity = quantity
     end
+
+    def is_hoarded?
+        if quantity > 10 
+            true
+        else
+            false
+        end
+    end
+
 end
