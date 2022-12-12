@@ -41,7 +41,7 @@ RSpec.describe ShoppingCart do
   end
 
   describe 'Iteration 3' do
-    xit 'totals the number of products in the cart' do
+    it 'totals the number of products in the cart' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
@@ -52,7 +52,9 @@ RSpec.describe ShoppingCart do
       cart.add_product(product2)
       cart.add_product(product3)
 
-      expect(cart.total_number_of_products).to be_a(13)
+      require "pry"; binding.pry
+
+      expect(cart.total_number_of_products).to eq(13)
     end
 
     xit 'is full?' do

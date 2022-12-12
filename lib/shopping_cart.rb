@@ -18,4 +18,8 @@ class ShoppingCart
         @products << product
     end
 
+    def total_number_of_products
+        products.
+    end
+
 end
