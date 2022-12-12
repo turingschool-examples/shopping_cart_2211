@@ -31,9 +31,7 @@ class ShoppingCart
 	end
 
 	def products_by_category(category)
-		products.find_all do |product| 
-			product.category == category
-		end			
+		products.find_all {|product| product.category == category}
 	end
 
 	def percentage_occupied
