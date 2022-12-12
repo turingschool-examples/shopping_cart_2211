@@ -28,4 +28,11 @@ class ShoppingCart
     def is_full?
         @products.length >= 4
     end
+
+    def products_by_category(type_of_product)
+        @products.find_all do |product|
+            product.category == type_of_product
+        end
+    end
+
 end

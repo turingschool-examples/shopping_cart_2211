@@ -63,7 +63,7 @@ RSpec.describe ShoppingCart do
       expect(cart.is_full?).to eq(false)    
     end
 
-    it 'is_full? method for cart' do
+    it 'is_full? : cart only holds 4 items' do
       cart.add_product(product_1)
       cart.add_product(product_2)
       cart.add_product(product_3)
@@ -71,5 +71,14 @@ RSpec.describe ShoppingCart do
 
       expect(cart.is_full?).to eq(true)    
     end
-  end
+
+    it 'products_by_category' do
+      cart.add_product(product_1)
+      cart.add_product(product_2)
+      cart.add_product(product_3)
+      cart.add_product(product_4)
+      
+      expect(cart.products_by_category(:paper)).to eq([product_1, product_3])
+    end
+    end
 end
