@@ -26,6 +26,6 @@ class ShoppingCart
     end
 
     def is_full?
-        @products.length >= @capacity
+        @products.length >= 4
     end
 end

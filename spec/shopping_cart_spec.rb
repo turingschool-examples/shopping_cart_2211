@@ -7,6 +7,7 @@ RSpec.describe ShoppingCart do
   let(:product_1) {Product.new(:paper, 'toilet paper', 3.70, '10')}
   let(:product_2) {Product.new(:meat, 'chicken', 4.50, '2')}
   let(:product_3) {Product.new(:paper, 'tissue paper', 1.25, '1')}
+  let(:product_4) {Product.new(:produce, 'apples', 0.99, '20')}
 
   describe 'Iteration 2' do
     it 'exists' do
@@ -43,6 +44,7 @@ RSpec.describe ShoppingCart do
       expect(product_1).to be_a(Product)
       expect(product_2).to be_a(Product)
       expect(product_3).to be_a(Product)
+      expect(product_4).to be_a(Product)
     end
 
     it 'total_number_of_products' do
@@ -61,5 +63,13 @@ RSpec.describe ShoppingCart do
       expect(cart.is_full?).to eq(false)    
     end
 
+    it 'is_full? method for cart' do
+      cart.add_product(product_1)
+      cart.add_product(product_2)
+      cart.add_product(product_3)
+      cart.add_product(product_4)
+
+      expect(cart.is_full?).to eq(true)    
+    end
   end
 end
