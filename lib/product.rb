@@ -6,10 +6,15 @@ class Product
     @name = 'toilet paper'
     @unit_price = 3.70
     @quantity = 10
-    @is_hoarded = false
+    @hoarded = false
   end
 
   def is_hoarded?
-    @is_hoarded
+    @hoarded
   end
+
+  def hoard
+    @hoarded = true
+  end
+  require 'pry'; binding.pry
 end
