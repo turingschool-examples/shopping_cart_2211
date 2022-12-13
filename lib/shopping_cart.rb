@@ -48,4 +48,8 @@ class ShoppingCart
     percentage_occupied = total_number_of_products.to_f / @capacity * 100
     percentage_occupied.round(2)
   end
+
+  # def sort_products_by_quanity
+  #   @products[:quantity].sort
+  # end
 end
