@@ -21,6 +21,9 @@ class ShoppingCart
   end
 
   def details
-    
+    {
+      name: @name,
+      capacity: @capacity.to_i
+    }
   end
 end
