@@ -1,3 +1,4 @@
+require 'pry'
 require './lib/product'
 require './lib/shopping_cart'
 
@@ -79,7 +80,7 @@ RSpec.describe ShoppingCart do
       cart.add_product(product_1)
       cart.add_product(product_2)
       cart.add_product(product_3)
-
+      binding.pry
       expect(cart.products_by_category(:paper)).to include(product_1, product_3)
     end
   end
