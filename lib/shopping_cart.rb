@@ -4,12 +4,16 @@ class ShoppingCart
     def initialize(name, capacity)
         @name = "King Soopers"
         @capacity = capacity
+        @products = products
     end 
 
     def products
-        products = ([])
+        @products = ([])
     end
 
+    def add_product
+        products.add(product_1)
+    end
 
 
 
