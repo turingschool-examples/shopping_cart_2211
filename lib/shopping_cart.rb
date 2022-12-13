@@ -13,6 +13,9 @@ class ShoppingCart
   end
 
   def details
-    
+    details_list = {}
+    details_list[:name] = @name
+    details_list[:capacity] = @capacity
+    details_list
   end
 end
