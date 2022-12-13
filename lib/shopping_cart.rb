@@ -48,6 +48,10 @@ class ShoppingCart
     end
   end
 
+  def percentage_occupied
 
+    @total/30
+
+  end
 
 end
