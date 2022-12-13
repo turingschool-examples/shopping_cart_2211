@@ -13,7 +13,7 @@ class Product
   end
 
   def is_hoarded?
-    if hoard == true
+    if hoard
       true
     else
       false
