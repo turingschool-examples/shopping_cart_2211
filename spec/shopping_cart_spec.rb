@@ -49,7 +49,6 @@ RSpec.describe ShoppingCart do
       cart.add_product(product1)
       cart.add_product(product2)
       cart.add_product(product3)
-
       expect(cart.total_number_of_products).to eq(13)
   end
 end

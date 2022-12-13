@@ -26,4 +26,11 @@ class ShoppingCart
       capacity: @capacity.to_i
     }
   end
+
+  def total_number_of_products
+    product_quantity = []
+    @products.map do |product|
+      product.quantity += product_quantity
+    end
+  end
 end
