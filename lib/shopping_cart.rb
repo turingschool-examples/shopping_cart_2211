@@ -7,6 +7,7 @@ attr_reader :name, :capacity, :products
     @name = name
     @capacity = capacity.chop.chop.chop.chop.chop.to_i
     @products = []
+    
   end
 
   def add_product(product)
@@ -36,6 +37,11 @@ attr_reader :name, :capacity, :products
       products_by_cat << product if product.category == category_symbol
     end
     products_by_cat
+  end
+
+  def percentage_occupied
+    require 'pry'; binding.pry
+    ((total_number_of_products.to_f / capacity) * 100).to_f.round(2)
   end
 
 end
