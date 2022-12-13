@@ -54,7 +54,8 @@ RSpec.describe ShoppingCart do
 
       cart.add_product(product4)
       expect(cart.is_full?).to be(true)
-      # expect(cart.products_by_category(:paper)).to be_an(Array)
+      expect(cart.products_by_category(:paper)).to be_an(Array)
+      expect(cart.products_by_category(:paper).size).to eq(3)
     end
   end
 end

@@ -29,4 +29,13 @@ attr_reader :name, :capacity, :products
   def is_full?
     total_number_of_products == @capacity
   end
+
+  def products_by_category(category_symbol)
+    products_by_cat = []
+    @products.each do |product|
+      products_by_cat << product if product.category == category_symbol
+    end
+    products_by_cat
+  end
+
 end
