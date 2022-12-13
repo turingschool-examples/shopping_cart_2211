@@ -19,4 +19,8 @@ class ShoppingCart
   def add_product(product_add)
     @products << product_add
   end
+
+  def details
+    
+  end
 end
