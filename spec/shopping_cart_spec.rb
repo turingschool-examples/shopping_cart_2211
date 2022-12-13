@@ -68,10 +68,12 @@ RSpec.describe ShoppingCart do
     cart.add_product(product3)
 
     expect(cart.percentage_occupied).to eq(43.33)
-    # product4 = Product.new(:produce, 'apples', 0.99, '20')
-    # cart.add_product(product4)
-    # expect(cart.sorted_products_by_quantity).to be_an(Array)
-    # expect(cart.product_breakdown).to be_a(Hash)
+    product4 = Product.new(:produce, 'apples', 0.99, '20')
+    cart.add_product(product4)
+    expect(cart.sorted_products_by_quantity).to be_an(Array)
+    expect(cart.product_breakdown).to be_a(Hash)
+    expect(cart.product_breakdown[:meat]).to be_an(Array)
+
     end
 
 

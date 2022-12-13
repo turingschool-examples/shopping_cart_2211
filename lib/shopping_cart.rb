@@ -40,8 +40,27 @@ attr_reader :name, :capacity, :products
   end
 
   def percentage_occupied
-    require 'pry'; binding.pry
     ((total_number_of_products.to_f / capacity) * 100).to_f.round(2)
+  end
+
+  def sorted_products_by_quantity
+    @products.sort_by do |product|
+      product.quantity
+    end
+  end
+
+  def product_breakdown
+    breakdown_hash = {}
+    @products.each do |product|
+      breakdown_hash[product.category]= [product]
+    end
+    breakdown_hash
+
+    sorted = breakdown_hash.sort_by do |key, key_value| 
+      key
+    end
+    sorted.to_h
+
   end
 
 end
