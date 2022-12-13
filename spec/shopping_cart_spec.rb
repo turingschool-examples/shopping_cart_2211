@@ -80,8 +80,22 @@ RSpec.describe ShoppingCart do
       cart.add_product(product_1)
       cart.add_product(product_2)
       cart.add_product(product_3)
-      binding.pry
       expect(cart.products_by_category(:paper)).to include(product_1, product_3)
+    end
+  end
+
+  describe 'Iteration 4' do
+    it 'can calculate the percent full' do
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product_1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product_2 = Product.new(:meat, 'chicken', 4.50, '2')
+      product_3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+
+      cart.add_product(product_1)
+      cart.add_product(product_2)
+      cart.add_product(product_3)
+
+      expect(cart.percentage_occupied).to eq(43.33)
     end
   end
 end
