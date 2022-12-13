@@ -13,11 +13,8 @@ class Product
     end
 
     def is_hoarded?
-        haorded = false
+        hoarded = false
     end
 
-
-
-
-
+    
 end
