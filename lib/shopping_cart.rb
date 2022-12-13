@@ -29,7 +29,7 @@ class ShoppingCart
 
   def total_number_of_products
     products.map do |product|
-      product.quantity += product_quantity
+      @product.quantity.to_i += product_quantity
     end
   end
 end
