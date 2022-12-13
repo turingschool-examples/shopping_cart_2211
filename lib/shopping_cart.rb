@@ -5,6 +5,7 @@ attr_reader :name, :capacity, :products
     @name = name
     @capacity = capacity.sub('items','').to_i
     @products = []
+    @is_full = false
     @cart_details = {
       name: @name,
       capacity: @capacity,
@@ -25,5 +26,9 @@ attr_reader :name, :capacity, :products
 
   def total_number_of_products
     @capacity
+  end
+
+  def is_full?
+    @is_full
   end
 end
