@@ -111,5 +111,5 @@ RSpec.describe ShoppingCart do
 
   #     expect(cart.sort_products_by_quanity[0]).to eq(product4)
   #   end
-  # end
+  end
 end
