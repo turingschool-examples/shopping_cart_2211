@@ -1,4 +1,6 @@
+require 'rspec'
 require './lib/product'
+
 
 RSpec.describe Product do
   describe 'Iteration 1' do
