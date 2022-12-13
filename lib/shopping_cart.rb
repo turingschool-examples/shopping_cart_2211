@@ -19,7 +19,12 @@ class ShoppingCart
     end
 
     def total_number_of_products
-        products.
+        # require 'pry'; binding.pry
+        total = 0
+        products.each do |product|
+           total += product.quantity
+        end
+        return total
     end
 
 end

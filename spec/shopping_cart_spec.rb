@@ -52,8 +52,6 @@ RSpec.describe ShoppingCart do
       cart.add_product(product2)
       cart.add_product(product3)
 
-      require "pry"; binding.pry
-
       expect(cart.total_number_of_products).to eq(13)
     end
 
@@ -67,7 +65,7 @@ RSpec.describe ShoppingCart do
       cart.add_product(product1)
       cart.add_product(product2)
       cart.add_product(product3)
-
+# require 'pry'; binding.pry
       expect(cart.is_full?).to be_a(false)
 
       product4 = Product.new(:produce, 'apples', 0.99, '20')
