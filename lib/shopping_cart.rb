@@ -19,4 +19,14 @@ attr_reader :name, :capacity, :products
     details_hash[:capacity] = @capacity
     details_hash
   end
+
+  def total_number_of_products
+    total = 0
+    @products.each { |product| total += product.quantity }
+    total
+  end
+
+  def is_full?
+    total_number_of_products == @capacity
+  end
 end
