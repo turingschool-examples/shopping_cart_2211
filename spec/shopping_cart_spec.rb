@@ -9,7 +9,7 @@ RSpec.describe ShoppingCart do
       expect(cart).to be_a(ShoppingCart)
     end
 
-    xit 'has attributes' do
+    it 'has attributes' do
       cart = ShoppingCart.new("King Soopers", "30items")
       
       expect(cart.name).to eq("King Soopers")
@@ -34,14 +34,14 @@ RSpec.describe ShoppingCart do
       expect(cart.products).to eq([product_1, product_2])
     end
 
-    xit 'creates a hash of cart details' do
+    it 'creates a hash of cart details' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       expect(cart.details).to eq({name: 'King Soopers', capacity: 30})
 
     end
 
-    xit 'updates' do
+    it 'updates' do
       cart = ShoppingCart.new("King Soopers", "30items")
       product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
       product2 = Product.new(:meat, 'chicken', 4.50, '2')
@@ -54,7 +54,7 @@ RSpec.describe ShoppingCart do
       expect(cart.total_number_of_products).to eq(13)
     end
 
-    xit 'updates' do
+    it 'updates' do
       cart = ShoppingCart.new("King Soopers", "30items")
       product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
       product2 = Product.new(:meat, 'chicken', 4.50, '2')
