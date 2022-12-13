@@ -55,7 +55,7 @@ RSpec.describe ShoppingCart do
       expect(cart.total_number_of_products).to eq(13)
     end
 
-    xit 'is full?' do
+    it 'is full?' do
       cart = ShoppingCart.new("King Soopers", "30items")
 
       product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
