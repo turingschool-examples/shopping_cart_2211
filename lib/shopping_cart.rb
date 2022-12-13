@@ -11,10 +11,7 @@ class ShoppingCart
         @products = ([])
     end
 
-    def add_product
-        products.add(product_1)
-    end
-
+    
 
 
 end
