@@ -12,9 +12,9 @@ class Product
         @quantity = quantity
     end
 
-    # def attributes
-    #     @category = :paper
-    # end
+    def is_hoarded?
+        haorded = false
+    end
 
 
 
