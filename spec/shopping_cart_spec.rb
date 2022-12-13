@@ -59,23 +59,21 @@ RSpec.describe ShoppingCart do
     end
 
     it 'can do product breakdown' do
-    cart = ShoppingCart.new("King Soopers", "30items")
-    product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
-    product2 = Product.new(:meat, 'chicken', 4.50, '2') 
-    product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
-    cart.add_product(product1)
-    cart.add_product(product2)
-    cart.add_product(product3)
+      cart = ShoppingCart.new("King Soopers", "30items")
+      product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+      product2 = Product.new(:meat, 'chicken', 4.50, '2') 
+      product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+      cart.add_product(product1)
+      cart.add_product(product2)
+      cart.add_product(product3)
 
-    expect(cart.percentage_occupied).to eq(43.33)
-    product4 = Product.new(:produce, 'apples', 0.99, '20')
-    cart.add_product(product4)
-    expect(cart.sorted_products_by_quantity).to be_an(Array)
-    expect(cart.product_breakdown).to be_a(Hash)
-    expect(cart.product_breakdown[:meat]).to be_an(Array)
-
+      expect(cart.percentage_occupied).to eq(43.33)
+      product4 = Product.new(:produce, 'apples', 0.99, '20')
+      cart.add_product(product4)
+      expect(cart.sorted_products_by_quantity).to be_an(Array)
+      expect(cart.product_breakdown).to be_a(Hash)
+      expect(cart.product_breakdown[:meat]).to be_an(Array)
     end
-
 
   end
 end
