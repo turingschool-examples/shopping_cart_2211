@@ -47,18 +47,44 @@ class ShoppingCart
     end.reverse
   end
 
-  def product_breakdown 
-    product_breakdown_hash = {}
+  #sure 
+
+  # def product_breakdown 
+  #   product_breakdown_hash = {}
     
-    @products.map do |product| 
-      product_breakdown_hash[product.category] = []
-    end
+  #   @products.map do |product| 
+  #     product_breakdown_hash[product.category] = []
+  #   end
 
-    product_breakdown_hash.map do |category, product|
-       product_breakdown_hash[category] << products_by_category(category)
-       product_breakdown_hash[category] = product.flatten
-    end
+  #   product_breakdown_hash.map do |category, product|
+  #      product_breakdown_hash[category] << products_by_category(category)
+  #      product_breakdown_hash[category] = product.flatten
+  #   end
 
-    product_breakdown_hash
+  #   product_breakdown_hash
+  #   require 'pry'; binding.pry
+    
+  # end
+
+  #better
+
+  # def product_breakdown
+  #   product_breakdown_hash = {} 
+  #   @products.each do |product|
+  #     product_breakdown_hash[product.category] = product_by_category_array(product.category)
+  #   end
+  #   product_breakdown_hash
+  # end
+
+  #even better
+
+  def product_breakdown
+    @products.group_by do |product| 
+      product.category
+    end
+  end
+
+  def product_by_category_array(category)
+    products_by_category(category)
   end
 end
